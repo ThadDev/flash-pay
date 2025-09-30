@@ -98,6 +98,21 @@
       background: linear-gradient(135deg, #0284c7 0%, #0f766e 100%);
       box-shadow: 0 4px 12px rgba(14, 165, 233, 0.3);
     }
+    /* css */
+    .copiedmessage{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      background: linear-gradient(135deg, #0284c7 0%, #0f766e 100%);
+      width: 100px;
+      margin: 0 auto;
+      margin-top: -100px;
+      padding:5px ;
+      z-index: 10;
+      display: none;
+    }
+
 
     @media (max-width: 640px) {
       .icon-container {
@@ -112,13 +127,13 @@
 
   <div class="lg:p-4 space-y-8 max-w-4xl mx-auto">
     <div id="header" class="sticky top-0 z-[1000]"></div>
-    <div class="px-4 lg:px-0">
+    <div class="px-4 lg:px-0 grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-4">
 
       <div class="w-full rounded-xl flex flex-col justify-center p-6 bg-white shadow-lg card border border-gray-100">
         <div class="flex flex-col md:flex-row md:justify-between md:items-center">
           <div>
             <p class="font-semibold text-xl text-gray-700">
-              My Welfare Balance
+           My walfare  Balance
             </p>
             <p class="text-3xl font-bold text-gray-800 mt-1">₦0.00</p>
           </div>
@@ -136,7 +151,34 @@
             <i class="fas fa-wallet text-teal-600 text-xl"></i>
           </div>
           <p class="text-teal-800 font-medium">
-            Recharge Balance:
+             Investment Recharge Balance:
+            <span class="font-bold text-lg">₦100000</span>
+          </p>
+        </div>
+      </div>
+      <div class="w-full rounded-xl flex flex-col justify-center p-6 bg-white shadow-lg card border border-gray-100">
+        <div class="flex flex-col md:flex-row md:justify-between md:items-center">
+          <div>
+            <p class="font-semibold text-xl text-gray-700">
+              My Investment Balance
+            </p>
+            <p class="text-3xl font-bold text-gray-800 mt-1">₦0.00</p>
+          </div>
+          <a href="/withdrawal.html">
+            <button
+              class="btn-primary text-white font-semibold py-3 px-6 rounded-lg mt-4 md:mt-0 flex items-center justify-center">
+              <span>Withdraw Funds</span>
+              <i class="fas fa-arrow-down ml-2"></i>
+            </button>
+          </a>
+        </div>
+
+        <div class="flex items-center bg-teal-50 p-4 mt-5 rounded-lg border border-teal-100">
+          <div class="bg-teal-100 p-2 rounded-lg mr-3">
+            <i class="fas fa-wallet text-teal-600 text-xl"></i>
+          </div>
+          <p class="text-teal-800 font-medium">
+           Welfare Recharge Balance:
             <span class="font-bold text-lg">₦1000000</span>
           </p>
         </div>
@@ -220,13 +262,15 @@
             </p>
           </a>
         </div>
-
+ <div class="copiedmessage" id="copiedMsg">
+           <span  class="copied">Copied!!!</span>
+           </div>
         <div class="w-full px-4">
           <p class="text-sm font-semibold mb-3 text-gray-700">
             Invite new users and get
-            <strong class="text-teal-600">30%</strong> interest
+            <strong class="text-teal-600">25%</strong> interest
           </p>
-
+         
           <div class="flex bg-teal-50 h-12 rounded-lg border border-teal-200 overflow-hidden">
             <input type="text"
               class="flex-grow px-3 bg-transparent text-gray-700 focus:outline-none text-sm sm:text-base" disabled
@@ -253,19 +297,8 @@
     
   </div>
   </div>
-  <script>
-  fetch('header.html')
-  .then(res => res.text())
-  .then(data => {
-    const container = document.getElementById('header');
-    container.innerHTML = data;
-  });
+  <script src="/index.js">
 
-    fetch('footer.html')
-      .then(response => response.text())
-      .then(data => {
-        document.getElementById('footer').innerHTML = data;
-      });
   </script>
 </body>
 

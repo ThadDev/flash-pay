@@ -108,7 +108,7 @@
         <div class="header-avatar text-white font-bold text-lg">CF</div>
 
         <div class="flex-1 ml-4">
-          <p id="greeting-text" class="text-gray-500 text-sm">Good Morning,</p>
+          <p id="greeting-text" class="text-gray-500 text-sm">Hello</p>
           <div class="flex space-x-2 items-center">
             <h1 class="text-gray-800 font-semibold">Chinedu Freedom</h1>
             <!-- <p class="h-3 w-3 rounded-full bg-[linear-gradient(135deg,#0ea5e9_0%,#0d9488_100%)]"></p> -->
@@ -118,5 +118,24 @@
         </div>
       </div>
     </header>
+
+    <script>
+      
+      
+    const hour = new Date().getHours()
+    function getGreeting() {
+    const hour = new Date().getHours();
+    if (hour < 12) return "Good Morning ";
+    if (hour < 16) return "Good Afternoon ";
+    return "Good Evening ";
+  }
+  let greetingText = document.getElementById("greeting-text")
+  if(greetingText){
+    greetingText.textContent = getGreeting()
+
+  }
+    console.log(hour)
+
+    </script>
   </body>
 </html>
